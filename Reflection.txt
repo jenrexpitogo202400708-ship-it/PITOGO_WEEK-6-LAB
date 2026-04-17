@@ -1,0 +1,11 @@
+Reflection
+
+ 1. What does await do? Why do we need it?
+await pauses the code until the fetch() request finishes and returns data. We need it so that the program waits for the users from the API before trying to display them. Without await, the code would continue running and users might be empty or undefined when we try to render them.
+
+2. What happens if the API is down? How does our code handle that?
+If the API is down or the request fails, fetch() will throw an error. The code inside the try block stops, and the program goes to the catch block. In the catch block, we display an error message on the screen and log the error in the console. The finally block still runs, so the loading message disappears and the button becomes clickable again.
+
+3. What's the difference between try and catch?
+try is where we put code that might fail, like fetching data from the API.
+catch runs only if an error happens inside the try block, and it handles the error by showing a message or fixing the problem.
